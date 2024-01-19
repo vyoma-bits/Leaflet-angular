@@ -1,0 +1,17 @@
+<form [formGroup]="pointsForm" (ngSubmit)="onSubmit()">
+    <input type="number" formControlName="num1">
+    <input type="number" formControlName="num2">
+    <button type="submit">Submit</button>
+  </form>
+  
+  <button (click)="addPoint()">Add Point</button>
+  
+  <p>Total: {{ sum }}</p>
+  
+  <div *ngIf="points.length > 0">
+    <h3>Previous Entries:</h3>
+    <ul>
+      <li *ngFor="let point of points">{{ point.num1 }}, {{ point.num2 }}</li>
+    </ul>
+  </div>
+  
